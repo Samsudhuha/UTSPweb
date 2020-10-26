@@ -67,7 +67,7 @@
                     @endif
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="#" role="button">
+                        <a class="nav-link" href="{{url('home')}}" role="button">
                             {{ Auth::user()->name }}
                         </a>
 

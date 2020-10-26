@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePeminjamTable extends Migration
+class CreatePeminjamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePeminjamTable extends Migration
      */
     public function up()
     {
-        Schema::create('peminjam', function (Blueprint $table) {
+        Schema::create('peminjams', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('id_book');
             $table->string('name');
+            $table->time('waktu_pinjam');
+            $table->time('waktu_ngembalikan');
             $table->timestamps();
         });
     }

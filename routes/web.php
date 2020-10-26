@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'BookController@index')->name('home');
+Route::post('/upload-book', 'BookController@store')->name('book.store');
+Route::post('/update-book', 'BookController@update')->name('book.update');
+Route::get('/create-book', 'BookController@create')->name('book.create');
+Route::get('/deletebook/{id}', 'BookController@destroy');
+Route::get('/editbook/{id}', 'BookController@edit');
