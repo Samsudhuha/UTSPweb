@@ -891,12 +891,17 @@
                 </div>
             </section> <!-- End of codeTagBox -->
             <section class="socialBox">
-                <div id="twitter_logo" class="logo" style="margin-right: 450px;"><a href="search-book">
+                <div id="twitter_logo" class="logo" style="margin-right: 450px;"><a href="{{url('search-book')}}">
                         <p>Search A Books</p>
                     </a>
                 </div>
-                <div id="fcc_logo" class="logo"><a href=" https://codepen.io/tom_o/">
+                <div id="fcc_logo" class="logo"><a href="{{url('borrow-book')}}">
                         <p>Borrow the Books</p>
+                    </a> </div>
+            </section> <!-- End of socialBox -->
+            <section class="socialBox">
+                <div id="fcc_logo" class="logo"><a href="{{url('list-borrow-book')}}">
+                        <p>List of Borrow the Books</p>
                     </a> </div>
             </section> <!-- End of socialBox -->
         </div> <!-- End of Code wrapper  -->

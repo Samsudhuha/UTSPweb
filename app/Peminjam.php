@@ -6,15 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Peminjam extends Model
 {
-    use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'id_book', 'name', 'waktu_pinjam', 'waktu_ngembalikan'
+        'id_book', 'name'
     ];
 
     /**

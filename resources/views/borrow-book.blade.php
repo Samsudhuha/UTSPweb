@@ -19,6 +19,7 @@
                         <h3>{{$book->name}}</h3>
                         <p>Pengarang : {{$book->pengarang}}</p>
                         <p>Penerbit : {{$book->penerbit}}</p>
+                        <p><a href="{{url('/borrowbook/'.$book->id)}}" class="btn btn-primary" role="button">Borrow the Book</a></p>
                     </div>
                 </div>
                 @endforeach

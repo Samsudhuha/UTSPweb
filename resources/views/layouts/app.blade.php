@@ -20,12 +20,14 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 </head>
 @yield('style')
@@ -99,6 +101,9 @@
         $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
     }, function() {
         $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+    });
+    $(document).ready(function() {
+        $('#example').DataTable();
     });
 </script>
 

@@ -17,8 +17,6 @@ class CreatePeminjamsTable extends Migration
             $table->bigIncrements('id');
             $table->string('id_book');
             $table->string('name');
-            $table->time('waktu_pinjam');
-            $table->time('waktu_ngembalikan');
             $table->timestamps();
         });
     }
