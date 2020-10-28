@@ -864,6 +864,7 @@
                 <div class="col">
                     <h1 class="title">SamsuDhuha</h1>
                     <h1 class="title">RafifRidho</h1>
+                    <h1 class="title">AdamGaribaldi</h1>
                     <br>
                     <h2>Hello fellow surfers and welcome to this little corner of the Library Awesome web</h2>
                 </div>
@@ -872,7 +873,7 @@
         </div>
         <article class="aboutWrapper" id="aboutHere">
             <section class="aboutCol">
-                <div class="ab-col"><span class="about-title">About</span><br><span>{"jelasin web ini"}.<br>Thanks for stopping by!</span></div>
+                <div class="ab-col"><span class="about-title">About</span><br><span>{In Here You can borrow books without actually come to the Library}.<br>Thanks for stopping by!</span></div>
             </section>
         </article> <!-- End aboutWrapper  -->
 
