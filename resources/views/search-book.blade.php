@@ -6,7 +6,6 @@
 @section('content')
 <div style="text-align: center;">
     <h3>LIST BOOK</h3>
-    <a href="/" class="btn btn-primary" role="button">Kembali</a>
 </div>
 <div class="container">
     <div class="row justify-content-center">
@@ -19,12 +18,16 @@
                         <h3>{{$book->name}}</h3>
                         <p>Pengarang : {{$book->pengarang}}</p>
                         <p>Penerbit : {{$book->penerbit}}</p>
+                        <p><a href="{{url('/review-book/'.$book->id)}}" class="btn btn-primary" role="button">Open</a></p>
                     </div>
                 </div>
                 @endforeach
             </div>
         </div>
     </div>
+    <p>
+        <a href="{{url('/')}}" class="btn btn-primary col-sm-4 col-sm-offset-4" role="button">Kembali</a>
+    </p>
 </div>
 
 

@@ -17,17 +17,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/search-book', 'PeminjamController@index');
-Route::get('/borrow-book', 'PeminjamController@borrow');
-Route::get('/return-book', 'PeminjamController@return');
-Route::get('/list-borrow-book', 'PeminjamController@list');
+Route::post('/login', 'Auth\LoginController@login')->middleware('checkrole');
+Route::get('/admin', 'BookController@index');
+Route::get('/user', 'ReviewController@index');
+Route::get('/user/review/{id}', 'ReviewController@create');
+Route::get('/user/edit/{id}', 'ReviewController@edit');
+Route::get('/user/delete/{id}', 'ReviewController@destroy');
+Route::post('/review-book', 'ReviewController@store')->name('review.store');
+Route::post('/update-review', 'ReviewController@update')->name('review.update');
+
+Route::get('/review-book/{id}', 'ReviewController@view');
+Route::get('/search-book', 'ReviewController@show');
 Route::get('/home', 'BookController@index')->name('home');
-Route::post('/return-book', 'PeminjamController@return')->name('book.return');
 Route::post('/upload-book', 'BookController@store')->name('book.store');
 Route::post('/update-book', 'BookController@update')->name('book.update');
 Route::get('/create-book', 'BookController@create')->name('book.create');
-Route::post('/form-borrow-book', 'PeminjamController@store')->name('peminjam.store');
 Route::get('/deletebook/{id}', 'BookController@destroy');
 Route::get('/editbook/{id}', 'BookController@edit');
-Route::get('/borrowbook/{id}', 'PeminjamController@borrowform');
-Route::get('/returnbook/{id}', 'PeminjamController@returnform');
+Route::get('/book/{id}', 'BookController@show');

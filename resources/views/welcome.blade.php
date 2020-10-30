@@ -897,21 +897,6 @@
                     </a>
                 </div>
             </section> <!-- End of socialBox -->
-            <section class="socialBox">
-                <div id="fcc_logo" class="logo" style="margin-right: 450px;"><a href="{{url('return-book')}}">
-                        <p>Return the Books</p>
-                    </a>
-                </div>
-                <div id="fcc_logo" class="logo"><a href="{{url('borrow-book')}}">
-                        <p>Borrow the Books</p>
-                    </a> </div>
-            </section> <!-- End of socialBox -->
-            <section class="socialBox">
-                <div id="fcc_logo" class="logo"><a href="{{url('list-borrow-book')}}">
-                        <p>List of Borrow the Books</p>
-                    </a>
-                </div>
-            </section> <!-- End of socialBox -->
         </div> <!-- End of Code wrapper  -->
 
         <footer class="footer">

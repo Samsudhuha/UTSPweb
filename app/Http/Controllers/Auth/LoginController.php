@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -36,4 +39,26 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // public function login(Request $request)
+    // {
+    //     $userData = array(
+    //         'email' => Input::get('email'),
+    //         'password' => Input::get('password'),
+    //     );
+    //     var_dump(Auth::attempt($userData));
+    //     die;
+    //     if (Auth::attempt($userData)) {
+    //         var_dump("test");
+    //         die;
+    //         if (Auth::user()->role == 'user') {
+    //             var_dump("test2");
+    //             die;
+    //             return redirect('student');
+    //         } elseif (Auth::user()->role == 'admin') {
+    //             return redirect('admin');
+    //         }
+    //     }
+    //     return redirect('login')->with('message', 'Account not found');
+    // }
 }

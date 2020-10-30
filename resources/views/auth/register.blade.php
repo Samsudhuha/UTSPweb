@@ -179,20 +179,20 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 offset-md-4">
-                                <div class="form-check" hidden>
-                                    <input class="form-check-input" type="checkbox" name="role" id="role" value="admin" checked>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="role" id="role" value="admin">
 
                                     <label class="form-check-label" style="margin-left:20px; margin-top:-10px" for="role">
                                         {{ __('Admin') }}
                                     </label>
                                 </div>
-                                <!-- <div class="form-check">
+                                <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="role" id="role" value="user">
 
                                     <label class="form-check-label" style="margin-left:20px; margin-top:-10px" for="role">
                                         {{ __('User') }}
                                     </label>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

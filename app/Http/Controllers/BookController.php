@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -59,9 +60,13 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show(Request $request, $id)
     {
-        //
+        $data = Book::findOrFail($id);
+        $review = DB::table('reviews')->where('book_id', '=', $id)->get();
+        $user = DB::table('users')->get();
+        $user2 = DB::table('users')->where('id', '=', $request->session()->get('user'))->get();
+        return view('user/show')->with('data', $data)->with('review', $review)->with('user', $user)->with('user2', $user2[0]);
     }
 
     /**
