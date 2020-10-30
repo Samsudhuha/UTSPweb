@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Peminjam;
 use App\Book;
+use App\ReturnBook;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PeminjamController extends Controller
 {
@@ -25,6 +27,39 @@ class PeminjamController extends Controller
         return view('borrow-book')->with('list_book', $assignments);
     }
 
+    public function return(Request $request)
+    {
+        if ($request->name != NULL) {
+            $name = $request->name;
+            $user = DB::table('peminjams')->where('name', $name)->get();
+            $count = count($user);
+            if ($count != 0) {
+                for ($i = 0; $i < $count; $i++) {
+                    $id[$i] = $user[$i]->id_book;
+                }
+                $book = DB::table('books')->whereIn('id', $id)->get();
+                return view('return-book')->with('data', $user)->with('list_book', $book);
+            } else {
+                return view('return-book')->with('data', null);
+            }
+        } else {
+            return view('return-book')->with('data', null);
+        }
+    }
+
+    public function returnbook(Request $request)
+    {
+        $name = $request->name;
+        $user = DB::table('peminjams')->where('name', $name)->get();
+        $count = count($user);
+        for ($i = 0; $i < $count; $i++) {
+            $id[$i] = $user[$i]->id_book;
+        }
+        $book = DB::table('books')->whereIn('id', $id)->get();
+
+        return view('return-book')->with('data', $user)->with('list_book', $book);
+    }
+
     public function list()
     {
         $book = Book::orderBy('created_at', 'desc')->get();
@@ -37,6 +72,16 @@ class PeminjamController extends Controller
     {
         $data = Book::findOrFail($id);
         return view('form-borrow-book')->with('data', $data);
+    }
+
+    public function returnform($id)
+    {
+        $data = DB::table('peminjams')->where('id', $id)->get();
+        ReturnBook::create([
+            'name' => $data[0]->name,
+        ]);
+        $data = DB::table('peminjams')->where('id', $id)->delete();
+        return view('return-book')->with('data', NULL);
     }
 
     /**

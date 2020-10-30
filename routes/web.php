@@ -19,8 +19,10 @@ Auth::routes();
 
 Route::get('/search-book', 'PeminjamController@index');
 Route::get('/borrow-book', 'PeminjamController@borrow');
+Route::get('/return-book', 'PeminjamController@return');
 Route::get('/list-borrow-book', 'PeminjamController@list');
 Route::get('/home', 'BookController@index')->name('home');
+Route::post('/return-book', 'PeminjamController@return')->name('book.return');
 Route::post('/upload-book', 'BookController@store')->name('book.store');
 Route::post('/update-book', 'BookController@update')->name('book.update');
 Route::get('/create-book', 'BookController@create')->name('book.create');
@@ -28,3 +30,4 @@ Route::post('/form-borrow-book', 'PeminjamController@store')->name('peminjam.sto
 Route::get('/deletebook/{id}', 'BookController@destroy');
 Route::get('/editbook/{id}', 'BookController@edit');
 Route::get('/borrowbook/{id}', 'PeminjamController@borrowform');
+Route::get('/returnbook/{id}', 'PeminjamController@returnform');

@@ -862,9 +862,9 @@
             </div>
             <header class="titleCol">
                 <div class="col">
-                    <h1 class="title">SamsuDhuha</h1>
-                    <h1 class="title">RafifRidho</h1>
-                    <h1 class="title">AdamGaribaldi</h1>
+                    <h1 class="title">155_SamsuDhuha</h1>
+                    <h1 class="title">058_RafifRidho</h1>
+                    <h1 class="title">125_AdamGaribaldi</h1>
                     <br>
                     <h2>Hello fellow surfers and welcome to this little corner of the Library Awesome web</h2>
                 </div>
@@ -892,8 +892,14 @@
                 </div>
             </section> <!-- End of codeTagBox -->
             <section class="socialBox">
-                <div id="twitter_logo" class="logo" style="margin-right: 450px;"><a href="{{url('search-book')}}">
+                <div id="twitter_logo" class="logo"><a href="{{url('search-book')}}">
                         <p>Search A Books</p>
+                    </a>
+                </div>
+            </section> <!-- End of socialBox -->
+            <section class="socialBox">
+                <div id="fcc_logo" class="logo" style="margin-right: 450px;"><a href="{{url('return-book')}}">
+                        <p>Return the Books</p>
                     </a>
                 </div>
                 <div id="fcc_logo" class="logo"><a href="{{url('borrow-book')}}">
@@ -903,7 +909,8 @@
             <section class="socialBox">
                 <div id="fcc_logo" class="logo"><a href="{{url('list-borrow-book')}}">
                         <p>List of Borrow the Books</p>
-                    </a> </div>
+                    </a>
+                </div>
             </section> <!-- End of socialBox -->
         </div> <!-- End of Code wrapper  -->
 
@@ -912,7 +919,7 @@
                 <a href="#top" class="chevron">&#x2227;</a>
             </div>
             <div class="footerBottom">
-                <h4 class="item">&copy; M. Samsu Dhuha & Rafif Ridho 2020</h4>
+                <h4 class="item">&copy; M. Samsu Dhuha, Rafif Ridho & Adam Garibaldi 2020</h4>
             </div>
         </footer>
     </div> <!-- End of Main Body Wrapper -->
