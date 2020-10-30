@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
 @section('style')
 
@@ -6,7 +6,6 @@
 @section('content')
 <div style="text-align: center;">
     <h3>LIST BOOK</h3>
-    <a href="/" class="btn btn-primary" role="button">Kembali</a>
 </div>
 <div class="container">
     <div class="row justify-content-center">
@@ -19,7 +18,7 @@
                         <h3>{{$book->name}}</h3>
                         <p>Pengarang : {{$book->pengarang}}</p>
                         <p>Penerbit : {{$book->penerbit}}</p>
-                        <p><a href="{{url('/borrowbook/'.$book->id)}}" class="btn btn-primary" role="button">Borrow the Book</a></p>
+                        <p><a href="{{url('/book/'.$book->id)}}" class="btn btn-primary" role="button">Open</a></p>
                     </div>
                 </div>
                 @endforeach

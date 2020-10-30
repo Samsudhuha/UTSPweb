@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Peminjam extends Model
+class Review extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Peminjam extends Model
      * @var array
      */
     protected $fillable = [
-        'id_book', 'name'
+        'book_id', 'user_id', 'comments', 'rate'
     ];
 
     /**

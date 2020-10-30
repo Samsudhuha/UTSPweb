@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReturnbooksTable extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateReturnbooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('returnbooks', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('book_id');
+            $table->string('user_id');
+            $table->string('comments');
+            $table->string('rate');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateReturnbooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('returnbooks');
+        Schema::dropIfExists('reviews');
     }
 }
