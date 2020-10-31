@@ -46,7 +46,7 @@ class LoginController extends Controller
     //         'email' => Input::get('email'),
     //         'password' => Input::get('password'),
     //     );
-    //     var_dump(Auth::attempt($userData));
+    //     var_dump(Auth::Check());
     //     die;
     //     if (Auth::attempt($userData)) {
     //         var_dump("test");

@@ -13,17 +13,19 @@
             <p>Penerbit : {{$data->penerbit}}</p>
         </div>
     </div>
-    @if(count($review)!=0)
+    @if($review!=null)
     @foreach($review as $re)
     <div class="form-horizontal col-sm-12 col-sm-offset-2">
         <div class=" form-group">
             <label class="control-label col-sm-4" for="user-name">Name</label>
             <div class="input-group">
+                @if($user!=null)
                 @foreach($user as $us)
                 @if($us->id==$re->user_id)
                 <h3>{{$us->name}}</h3>
                 @endif
                 @endforeach
+                @endif
             </div>
         </div>
         <div class="form-group">

@@ -53,9 +53,13 @@ class ReviewController extends Controller
     {
         $data = Book::findOrFail($id);
         $review = DB::table('reviews')->where('book_id', '=', $id)->get();
-        $user = DB::table('users')->where('id', '=', $review[0]->user_id)->get();
+        if (count($review) != 0) {
+            $user = DB::table('users')->where('id', '=', $review[0]->user_id)->get();
 
-        return view('show')->with('data', $data)->with('review', $review)->with('user', $user);
+            return view('show')->with('data', $data)->with('review', $review)->with('user', $user);
+        } else {
+            return view('show')->with('data', $data)->with('review', null)->with('user', null);
+        }
     }
 
     /**
